@@ -58,6 +58,57 @@ npm run dev
 
 5. Open your browser and navigate to `http://localhost:3000`
 
+## Deployment Instructions
+
+### Preparing for Deployment
+
+1. Build the React client
+```
+npm run build
+```
+
+2. Test the production build locally
+```
+NODE_ENV=production npm start
+```
+
+### Deploying to Heroku
+
+1. Create a Heroku account and install the Heroku CLI
+2. Create a new Heroku app
+```
+heroku create your-app-name
+```
+
+3. Add MongoDB Atlas as an add-on or set up your database connection
+```
+heroku config:set MONGO_URI=your_mongodb_connection_string
+heroku config:set JWT_SECRET=your_jwt_secret
+```
+
+4. Push to Heroku
+```
+git push heroku main
+```
+
+5. Open your deployed application
+```
+heroku open
+```
+
+### Deploying to Other Platforms
+
+For other platforms like Vercel, Netlify, or AWS:
+
+1. Build the React client
+```
+npm run build
+```
+
+2. Deploy the server with the built client files
+3. Set the necessary environment variables on your hosting platform
+4. Ensure the server is configured to serve the static files from the client/build directory
+
 ## API Documentation
 
 ### Authentication Endpoints
@@ -91,4 +142,5 @@ Run tests with:
 ```
 npm test
 ```
+
 

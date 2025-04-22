@@ -1,0 +1,27 @@
+schemaVersion: 2.0.0
+metadata:
+  name: booking-website
+  version: 1.0.0
+  displayName: Booking Website
+  description: A booking website for store owners and guests
+components:
+  - name: dev
+    container:
+      image: public.ecr.aws/aws-mde/universal-image:latest
+      memoryLimit: 4Gi
+commands:
+  - id: install
+    exec:
+      component: dev
+      commandLine: "npm run install-all"
+      workingDir: ${PROJECT_SOURCE}
+  - id: build
+    exec:
+      component: dev
+      commandLine: "npm run build"
+      workingDir: ${PROJECT_SOURCE}
+  - id: test
+    exec:
+      component: dev
+      commandLine: "npm test"
+      workingDir: ${PROJECT_SOURCE}
