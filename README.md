@@ -1,146 +1,71 @@
-# Table Booking System
+# Coffee Store Website
 
-A web application that allows store owners to manage their stores and tables, and guests to book tables at these stores.
+A React-based website for a coffee store with multiple pages and a calendar feature.
 
 ## Features
 
-### For Store Owners
-- User registration and authentication
-- Store creation and management
-- Table management within stores
-- View and manage bookings
-- Dashboard with booking statistics
+- **Home Page**: Welcoming landing page with featured products and store information
+- **Menu Page**: Interactive menu with categories for coffee, tea, pastries, and sandwiches
+- **About Page**: Information about the coffee store's history, values, team, and location
+- **Calendar Page**: Interactive calendar showing upcoming events at the coffee store
 
-### For Guests
-- Browse available stores
-- View store details and available tables
-- Book tables for specific dates and times
-- Manage bookings (cancel, reschedule)
+## Technologies Used
 
-## Tech Stack
+- React
+- React Router for navigation
+- React Calendar for the calendar functionality
+- CSS for styling
 
-- **Frontend**: React.js, React Router, Bootstrap
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB with Mongoose
-- **Authentication**: JWT (JSON Web Tokens)
-- **Testing**: Jest, Supertest
-
-## Setup Instructions
+## Getting Started
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
-- MongoDB (local or Atlas)
+- npm or yarn
 
 ### Installation
 
 1. Clone the repository
 ```
 git clone <repository-url>
-cd booking-website
 ```
 
 2. Install dependencies
 ```
-npm run install-all
+npm install
+```
+or
+```
+yarn install
 ```
 
-3. Create a `.env` file in the root directory with the following variables:
+3. Start the development server
 ```
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+npm start
 ```
-
-4. Start the development server
+or
 ```
-npm run dev
+yarn start
 ```
 
-5. Open your browser and navigate to `http://localhost:3000`
+4. Open your browser and navigate to `http://localhost:3000`
 
-## Deployment Instructions
+## Project Structure
 
-### Preparing for Deployment
+- `/public` - Static files and HTML template
+- `/src` - Source code
+  - `/components` - Reusable UI components
+  - `/pages` - Page components
+  - `/assets` - Images and other assets
 
-1. Build the React client
-```
-npm run build
-```
+## Future Enhancements
 
-2. Test the production build locally
-```
-NODE_ENV=production npm start
-```
+- Online ordering system
+- User accounts and loyalty program
+- Booking tool for reservations
+- Blog section with coffee tips and recipes
 
-### Deploying to Heroku
+## License
 
-1. Create a Heroku account and install the Heroku CLI
-2. Create a new Heroku app
-```
-heroku create your-app-name
-```
-
-3. Add MongoDB Atlas as an add-on or set up your database connection
-```
-heroku config:set MONGO_URI=your_mongodb_connection_string
-heroku config:set JWT_SECRET=your_jwt_secret
-```
-
-4. Push to Heroku
-```
-git push heroku main
-```
-
-5. Open your deployed application
-```
-heroku open
-```
-
-### Deploying to Other Platforms
-
-For other platforms like Vercel, Netlify, or AWS:
-
-1. Build the React client
-```
-npm run build
-```
-
-2. Deploy the server with the built client files
-3. Set the necessary environment variables on your hosting platform
-4. Ensure the server is configured to serve the static files from the client/build directory
-
-## API Documentation
-
-### Authentication Endpoints
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login a user
-- `GET /api/auth/me` - Get current user information
-
-### Store Endpoints
-- `GET /api/stores` - Get all stores
-- `GET /api/stores/:id` - Get a specific store
-- `POST /api/stores` - Create a new store (owner only)
-- `PUT /api/stores/:id` - Update a store (owner only)
-- `DELETE /api/stores/:id` - Delete a store (owner only)
-
-### Table Endpoints
-- `GET /api/stores/:storeId/tables` - Get all tables for a store
-- `POST /api/stores/:storeId/tables` - Add a table to a store (owner only)
-- `PUT /api/tables/:id` - Update a table (owner only)
-- `DELETE /api/tables/:id` - Delete a table (owner only)
-
-### Booking Endpoints
-- `GET /api/bookings` - Get all bookings (filtered by user role)
-- `GET /api/bookings/:id` - Get a specific booking
-- `POST /api/bookings` - Create a new booking
-- `PUT /api/bookings/:id` - Update a booking (owner or booking creator)
-- `DELETE /api/bookings/:id` - Cancel a booking (owner or booking creator)
-
-## Testing
-
-Run tests with:
-```
-npm test
-```
-
+This project is licensed under the MIT License.
 
